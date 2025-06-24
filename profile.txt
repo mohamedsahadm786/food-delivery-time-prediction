@@ -1,0 +1,423 @@
+EDUCATION:-
+- Completed my Master's in Statistics from Pondicherry University, located in Pondicherry, India, with a CGPA of  8.34/10.
+- Completed my graduation in Statistics from Hindu College, University of Delhi, located in Delhi, India, with a CGPA of  8.49/10.
+
+
+ABOUT ME:-
+- I'm a passionate Data Enthusiast with a solid foundation in Statistics and a keen interest in uncovering insights from data. Having completed my Bachelor of Science (Honors) in Statistics from Hindu College, University of Delhi, I am now in the final year of my Master of Science in Statistics at Pondicherry University. My journey in the world of data has only deepened my curiosity, driving me to explore cutting-edge technologies, innovative solutions, and the fascinating applications of statistics and mathematics.
+
+- I thrive on challenges and enjoy using coding and problem-solving to extract meaningful insights from complex datasets. As I continue my academic and professional growth, I aim to apply my analytical skills to make data-driven decisions that can create a positive impact on organizations and society.
+
+- With a growth mindset and a commitment to continuous learning, I actively seek opportunities to expand my skill set, keeping pace with the latest advancements in the ever-evolving field of data and analytics.
+
+
+ABOUT MY EXPERIENCES:-
+- First of all, I only have Internship experience. I completed 3 Internships. Those are,
+
+1 - Data Analyst Intern at 'Nevar Systems', located in Puducherry, India. 
+Here I did the following things.
+- Supported data-driven decision-making by performing statistical analysis and exploratory data analysis (EDA) on large datasets, improving insight delivery across projects.
+- Assisted in the design and execution of analytical tasks, contributing to real-time reporting and model-ready data pipelines, reducing manual efforts by 30–40%.
+- Applied data preprocessing, transformation, and visualization techniques using Python, SQL, and Excel to enhance clarity and interpretability of business data.
+- Collaborated with cross-functional teams to translate analytical findings into actionable insights, while documenting workflows and improving project reporting efficiency.
+
+2 - Artificial Intelligence Intern at 'Btech Walleh'. It is a remote Internship.
+Here I did the following things.
+- Engaged in multiple AI projects, including the development and deployment of advanced machine learning models.
+- Collaborated with cross-functional teams to build AI-driven solutions, demonstrating practical knowledge in areas such as natural language processing, computer vision, deep learning, etc.
+- Gained hands-on experience in data preprocessing, model training, and performance evaluation.
+- Successfully deployed AI models in real-world environments, contributing to enhancing the company's technological solutions.
+- Improved skills in programming languages and AI tools such as TensorFlow, PyTorch, and others.
+
+3 - Corporate Development Specialist Intern at 'Younity.In'. It is also a remote Internship.
+Here I did the following things.
+- Conducted competitive analysis to identify industry trends and benchmarks to inform corporate development strategies.
+- Collaborated with cross-functional teams to develop and implement strategic initiatives aimed at increasing market share and revenue.
+- Actively participated in team meetings, brainstorming sessions, and strategy discussions to contribute ideas and insights.
+- Assisted in preparing financial forecasts and projections to support decision-making and strategic planning.
+
+
+ABOUT MY PROJECTS:-
+1 - Predicting Food Delivery Time using Machine Learning:
+[
+This project aims to develop a predictive model that accurately estimates food delivery time using the Zomato Delivery Operations Analytics Dataset. With over 45,000 records and 20 features—including weather conditions, traffic density, vehicle details, and geographic coordinates—this project uses machine learning techniques to improve delivery route optimization and enhance customer satisfaction.
+
+📌 Objective
+Build a predictive model to estimate food delivery times.
+Identify key factors influencing delivery time (e.g., weather, traffic, vehicle condition).
+Help restaurants and delivery platforms optimize logistics and improve efficiency.
+Provide insights into how external factors impact delivery durations.
+📊 Dataset Overview
+Dataset Source: Kaggle
+Dataset Name: Zomato Delivery Dataset
+Size: 45,584 rows × 20 columns
+
+Features include:
+Delivery person details (age, ratings)
+Order & delivery timestamps
+Weather and traffic conditions
+Vehicle and order type
+Location coordinates (restaurant and delivery point)
+Time taken for delivery (target variable)
+
+🧹 Phase 1: Data Cleaning & Preprocessing
+Dropped irrelevant columns: ID, Delivery_person_ID, Order_Date, Time_Ordered, Time_Order_Picked
+Removed rows with missing values
+Created a new column: Haversine_Distance_km to represent delivery distance
+Removed the 4 raw coordinate columns after calculating distance
+Detected and removed outliers using:
+Distance threshold (>25 km)
+Speed thresholds by city type
+Rare rating values (e.g., 2.5–3.4)
+Performed sampling to reduce dataset to 5,000 rows while retaining key minority cases (Festival=Yes, City=Semi-Urban, Multiple_deliveries=3.0)
+
+🧠 Phase 2: Feature Engineering & Modeling
+🔸 Encoding
+OneHotEncoder: weather_conditions, type_of_order, type_of_vehicle, city
+LabelEncoder: festival
+🔸 Feature Selection
+Used two techniques to identify the top predictive features:
+- Random Forest Feature Importances
+- Permutation Feature Importances
+
+Top Features Selected:
+haversine_Distance_km, festival, road_traffic_density, delivery_person_ratings, delivery_person_age, vehicle_condition, multiple_deliveries, and selected one-hot encoded weather/city columns
+
+🔸 Model Building
+Models tested:
+- Linear Regression
+- SVR
+- Decision Tree
+- Random Forest
+- Gradient Boosting
+- XGBoost
+
+Evaluation Metrics Used:
+- MAE (Mean Absolute Error)
+- RMSE (Root Mean Squared Error)
+- R² Score
+- Best Performing Models (Pre-Tuning):
+
+Random Forest – R²: 0.8999
+XGBoost – R²: 0.8888
+Gradient Boosting – R²: 0.8774
+
+🔸 Hyperparameter Tuning
+Used GridSearchCV with 5-fold CV to tune top 3 models.
+
+Final Results (Post-Tuning):
+Random Forest: MAE = 2.86, RMSE = 3.60, R² = 0.9045
+XGBoost: MAE = 2.91, R² = 0.9036
+Gradient Boosting: MAE = 2.93, R² = 0.9032
+
+⚖️ Model Comparison
+Performed paired t-tests on cross-validated MAEs to compare models:
+
+Random Forest vs Gradient Boosting: Significant (p = 0.0057)
+Random Forest vs XGBoost: Not significant (p = 0.5385)
+Gradient Boosting vs XGBoost: Not significant (p = 0.3946)
+Conclusion:
+Random Forest statistically outperformed Gradient Boosting and slightly outperformed XGBoost, making it the most reliable choice.
+
+✅ Conclusion
+This project successfully developed a highly accurate predictive model to estimate food delivery time. The insights derived from the data (e.g., importance of distance, traffic, festivals) provide actionable intelligence for optimizing delivery operations in the food industry. The final Random Forest model achieved over 90% accuracy, indicating strong performance and generalizability.
+
+📂 Technologies Used
+Python (Pandas, NumPy, Scikit-learn, XGBoost)
+Jupyter Notebook
+Matplotlib, Seaborn (for visualization)
+Haversine Formula (for geo-distance calculation)
+GridSearchCV for hyperparameter tuning
+]
+
+2 - AI-powered Sustainability Report Analyzer: LLM-based Pipeline for ESG Digitalization Needs Detection:
+[
+An LLM-based NLP tool designed to analyze multilingual corporate sustainability reports, identify digitalization needs, and map them to ERGOSIGN service offerings — supporting data-driven B2B outreach and regulatory readiness under CSRD (Corporate Sustainability Reporting Directive).
+
+Project Overview
+This project builds an end-to-end AI pipeline using GPT-4o-mini to extract, analyze, and summarize key insights from 300+ page sustainability reports. It supports multilingual input, automates text extraction, identifies manual or inefficient ESG-related processes, and outputs structured recommendations for digital transformation.
+
+The system is integrated with a Streamlit UI, allows batch processing, and includes a GPT cost tracker for efficient resource usage.
+
+Key Features
+✅ LLM-Powered NLP Pipeline
+Uses GPT-4o-mini to detect digitalization opportunities from unstructured ESG report content.
+
+🌍 Multilingual Support
+Detects and translates non-English content (supports 10+ languages), enabling global report coverage.
+
+🧾 Scanned & Native PDF Handling
+Utilizes PyMuPDF and Tesseract OCR to parse both native and scanned PDF formats.
+
+📊 Structured Insight Extraction
+Generates a 6-column table: Page Number, Evidence, Area, Suggested Digitalization, Reason, Confidence Score.
+
+🔄 Dynamic Web Scraping for Service Mapping
+Automatically matches identified needs to 20+ ERGOSIGN services using BeautifulSoup + Requests.
+
+📤 Multi-Format Output
+Exports final reports as both Excel and PDF files for internal stakeholders and sales teams.
+
+🌐 Interactive Web Interface
+Built with Streamlit, allowing users to upload reports, trigger the pipeline, and view/download results.
+
+💰 API Cost Tracking
+Tracks GPT API usage in real time to manage and optimize cost per report.
+
+Tech Stack
+Category	Tools & Libraries
+LLM/NLP	GPT-4o-mini, spaCy, LangDetect, Translation API
+PDF & OCR	PyMuPDF, Tesseract OCR
+Data Handling	pandas, OpenPyXL, XlsxWriter
+Web Scraping	BeautifulSoup, Requests
+Web UI	Streamlit
+Export & Reports	PDF generation tools, Excel writers
+Output Structure
+Main Report Table (per 50-page chunk):
+
+Page Number | Evidence | Area | Suggested Digitalization | Reason | Confidence Score
+Consolidated Final Table (entire document):
+
+Merged version of all chunked outputs
+Service Mapping Table:
+
+Digitalization Need | Mapped ERGOSIGN Service | Justification
+Exported Formats:
+
+.xlsx (Excel)
+.pdf (PDF)
+Impact & Results
+✅ ~95% detection accuracy for digitalization needs on test reports
+✅ ~80% manual review effort reduced
+✅ ~70% improvement in text extraction efficiency
+✅ Supports batch analysis of reports at 5× speed vs manual process
+Future Enhancements
+Add fine-tuned model capability (optional custom LLMs or adapters)
+Expand service-mapping knowledge base beyond ERGOSIGN
+Include dashboard analytics for digitalization trends across companies
+Add user authentication and file history tracking to the UI
+Use Cases
+💼 Consulting Firms – Analyze ESG inefficiencies in target companies
+🏢 Sales Teams – Identify and pitch relevant digital solutions
+🧾 Compliance Teams – Track readiness for CSRD requirements
+🌍 Global Enterprises – Multilingual sustainability documentation insight
+]
+
+3 - Amazon Purchasing Business Insights - Advanced PostgreSQL Project:
+[
+- Analyzed 29,000+ observations from Amazon's purchasing dataset to extract business insights using 19+ complex SQL queries.
+- Automated inventory stock updates using a PL/pgSQL Store Procedure, reducing manual updates by 100%.
+- Identified top-performing products, least-selling categories, and revenue trends through advanced SQL analysis.
+- Built a trigger-based solution to deduct stock quantities upon each sales record insertion.
+- Improved query performance by 30% through query optimization techniques like indexing, CTEs, and joins.
+]
+
+4 - Sentiment Analysis Chatbot Project:
+[
+This project implements a chatbot that predicts the sentiment of a user's input text. It categorizes the sentiment into Positive, Negative, or Neutral using natural language processing (NLP) techniques and machine learning models. The chatbot leverages advanced text preprocessing, word embeddings, and an LSTM (Long Short-Term Memory) neural network to achieve accurate sentiment predictions.
+
+Key Features
+
+Text Preprocessing:
+
+Cleans text by removing digits, URLs, mentions, hashtags, special characters, and HTML tags. Expands contractions (e.g., "don't" → "do not"). Normalizes elongated words (e.g., "soooo" → "soo"). Handles negations in sentences for better sentiment understanding. Retains only relevant parts of speech (nouns, adjectives, verbs, and adverbs). Filters out non-English words for language consistency.
+
+Word Embedding:
+
+Uses Word2Vec to generate vector representations of words, capturing their semantic context.
+
+Sentiment Categorization:
+
+Assigns numerical labels: Positive (1), Neutral (0), and Negative (-1).
+
+Machine Learning Model:
+
+Employs an LSTM neural network with pre-trained word embeddings for sequential data analysis. Trains the model using Keras with a focus on accuracy and efficiency.
+
+User Interaction:
+
+Includes a Streamlit interface for easy interaction. Provides real-time sentiment analysis for user inputs.
+]
+
+
+5 - Real Estate Price Prediction: AI-Powered Housing Market Tool:
+[
+This project is a Property Price Prediction Model designed to predict property prices in USA based on key features like location, number of bedrooms, bathrooms, and square footage. The model is built using Machine Learning and provides an easy-to-use web interface for real estate companies or individuals looking to estimate property prices.
+
+Features:-
+
+Input Features: Location (Area) Number of Bedrooms (BHK) Number of Bathrooms Square Footage
+
+Output: Predicted Property Price
+
+Tools and Technologies:-
+
+Python: Core programming language Pandas: Data cleaning and preprocessing Matplotlib: Data visualization Scikit-Learn: Model building and evaluation Flask: Backend server for API integration HTML, CSS, JavaScript: Frontend for user interaction
+
+Project Workflow:-
+
+1)-Data Collection and Cleaning: -The dataset includes property details such as location, size, and BHK. -Cleaned and preprocessed the data using pandas.
+
+2)-Exploratory Data Analysis (EDA): -Visualized trends and correlations using matplotlib.
+
+3)-Model Building: Used Scikit-Learn to train a machine learning model for property price prediction.
+
+4)-Backend Development: Integrated the model into a Flask server to serve predictions.
+
+5)-Frontend Development: Created a user-friendly website using HTML, CSS, and JavaScript.
+
+6)-Prediction: Users can input property details to get an instant price prediction.
+]
+
+
+6 - Cricket T20 World Cup 2022 Data Analysis:
+[
+Objective: Identified the best possible cricket team (Best XI) from T20 World Cup 2022 data that could hypothetically compete against an extraterrestrial team.
+
+- Key Responsibilities & Achievements:
+
+Web Scraping & Data Collection: Scraped match and player statistics from ESPN Cricinfo using Bright Data to collect structured data.
+Data Processing & Cleaning: Transformed and cleaned the dataset using Python (Pandas) to ensure accuracy and consistency.
+Exploratory Data Analysis (EDA): Conducted statistical analysis to derive insights on player performances, team strengths, and key match-winning factors.
+Dashboard Development: Built interactive dashboards in Power BI to visualize player rankings, performance metrics, and team compositions.
+Technology Stack: Python, Pandas, Web Scraping, Power BI, Data Analytics
+]
+
+
+7 - Clinical Trial Safety Analysis using SAS (CDISC SDTM Standards):
+[
+- Analyzed clinical trial data from CDISC SDTM pilot project to evaluate the safety profile of an
+ investigational drug.
+- Processed and interpreted SDTM datasets including Demographics (DM), Adverse Events (AE), Lab
+ Results (LB), Exposure (EX), and Vital Signs (VS).
+- Identified top 5 most common adverse events, with Headache and Nausea accounting for over 35
+ percentage of all reported events, predominantly in the treatment group.
+- Observed increased incidence of adverse events in female participants compared to males (43 Percentage
+ vs. 32Percentage), indicating potential gender-based variability.
+]
+
+
+8 - AI-Powered ATS-Optimized Resume and Cover Letter Generator:
+[
+# AI-Powered-ATS-Optimized-Resume-and-Cover-Letter-Generator
+
+## 💡 Overview
+
+This project is an AI-powered tool designed to help job seekers generate **ATS-friendly, highly tailored resumes and cover letters** based on specific job applications. It leverages **GPT-4o**, the latest generation of OpenAI's language model, to analyze job descriptions and optimize resume content automatically. The output is a professionally formatted **LaTeX-based PDF resume and cover letter**, ready for submission.
+
+The tool aims to solve a common problem faced by job seekers: **generic resumes and cover letters often get rejected by Applicant Tracking Systems (ATS)** or hiring managers due to lack of alignment with the job description. By dynamically tailoring these documents for each application, this tool significantly boosts the chances of getting noticed.
+
+---
+
+## ⚙️ Features
+
+✅ Generates **ATS-friendly** and highly relevant resumes.  
+✅ Auto-creates customized **cover letters** based on the job details.  
+✅ Uses **GPT-4o** to analyze job descriptions and your existing projects/skills.  
+✅ Selects the **most relevant 4 projects** from a predefined set of 7 projects.  
+✅ Dynamically updates key resume sections:
+- Executive Summary  
+- Internship Experience  
+- Projects  
+- Skills  
+
+✅ Professionally formatted output using **LaTeX templates**.  
+✅ Saves time by automating repetitive resume tailoring.  
+✅ Ideal for applying through job portals where ATS systems are used.  
+
+---
+
+## 🏗️ Project Workflow
+
+The tool operates through the following steps:
+
+### 1️⃣ **User Inputs**
+The user provides four essential inputs:
+- **Job Title**
+- **Job Description**
+- **Company Name**
+- **Location**
+
+---
+
+### 2️⃣ **Predefined Resources**
+- **8 projects** saved in a structured JSON file.
+- Predefined **LaTeX templates** for the resume and cover letter.
+
+---
+
+### 3️⃣ **GPT-4o Driven Process**
+
+The tool uses three separate GPT-powered functions:
+
+#### 🔹 `select_best_projects()`
+- Analyzes the job description and selects the **4 most relevant projects** from your predefined list.
+- These projects are integrated into the LaTeX resume template.
+
+#### 🔹 `prompt_gpt4o()`
+- Analyzes:
+  - The job description, title, company, and location.
+  - The current LaTeX resume (with the 4 selected projects).
+- Reshapes and rewrites the following resume sections to align with the job description:
+  - Executive Summary  
+  - Internship Experience  
+  - Projects  
+  - Skills  
+
+#### 🔹 `generate_cover_letter_body()`
+- Generates a **personalized cover letter** using the provided inputs.
+- The content is formatted using the LaTeX template for a clean, professional look.
+
+---
+
+### 4️⃣ **Final Output**
+- A fully customized **ATS-friendly Resume (PDF)**.  
+- A tailored **Cover Letter (PDF)**.  
+
+Both documents are ready for immediate submission through job portals.
+
+---
+
+## 📦 Technologies Used
+
+- **Python** (Jupyter Notebook based implementation)  
+- **OpenAI GPT-4o** API  
+- **LaTeX** for professional document formatting  
+- **JSON** for storing predefined project details  
+- **Streamlit** *(Optional, can be integrated for building a user-friendly UI in the future)*  
+
+---
+
+## 🎯 Why This Project Matters
+
+- Most resumes fail ATS filters due to poor alignment with job requirements.  
+- Manually tailoring resumes for every job is time-consuming.  
+- This AI tool automates the process, ensuring every application is optimized.  
+- Increases chances of interview shortlisting and recruiter attention.  
+
+---
+
+
+---
+
+## 🚀 Future Improvements
+
+- Building a **Streamlit Web App** for non-technical users.  
+- Adding more advanced AI logic for project and skill selection.  
+- Incorporating additional sections like Certifications or Awards.  
+- Adding support for multiple resume formats (Word, HTML).  
+
+---
+
+## 📄 License
+
+This project is for educational and personal use. Commercial use may require modification or compliance with OpenAI API terms.
+
+---
+
+## 🤝 Acknowledgements
+
+- **OpenAI GPT-4o** for the powerful AI model.  
+- Inspiration from real-world job search challenges.  
+- LaTeX community for professional document formatting tools.  
+]

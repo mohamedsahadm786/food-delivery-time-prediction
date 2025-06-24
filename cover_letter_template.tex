@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[none]{hyphenat}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\pagestyle{empty} % Disable page numbers
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black
+}
+
+\begin{document}
+
+%-------------------------
+% Header
+%-------------------------
+
+\begin{center}
+    {\Huge\textbf{Mohamed Sahad M}} \\
+\end{center}
+
+% ------------------------
+% Job Title (hidden section marker)
+% ------------------------
+\begingroup
+\makeatletter\def\@currentlabel{jobtitle}\makeatother
+\phantomsection
+\label{sec:jobtitle}
+\begin{center}
+    {\large ((( job_title ))) } \\
+    \vspace{0.3cm}
+    \href{mailto:mohamedsahadm786@gmail.com}{mohamedsahadm786@gmail.com} \quad
+    +91 7510341129 \quad
+    \href{https://www.linkedin.com/in/mohamed-sahad-m-96b038200/}{LinkedIn Profile} \quad
+    \href{https://mohamedsahadm786.github.io/My_Portfoli/}{My portfolio} \\
+\end{center}
+\endgroup
+
+\vspace{0.5cm}
+
+% ------------------------
+% Address (hidden section marker)
+% ------------------------
+\begingroup
+\makeatletter\def\@currentlabel{address}\makeatother
+\phantomsection
+\label{sec:address}
+To Hiring Manager \\
+((( company_info ))) \\
+\endgroup
+
+\vspace{1cm}
+
+Dear Hiring Manager, \\
+
+% ------------------------
+% Narration (hidden section marker)
+% ------------------------
+\begingroup
+\makeatletter\def\@currentlabel{narration}\makeatother
+\phantomsection
+\label{sec:narration}
+
+((( cover_letter_body )))
+
+\endgroup
+
+\vspace{0.8cm}
+
+Sincerely, \\
+Mohamed Sahad M
+
+\end{document}

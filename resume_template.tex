@@ -1,0 +1,413 @@
+%
+%Academic CV LaTeX Template
+% Author: Dubasi Pavan Kumar
+% LinkedIn: https://www.linkedin.com/in/im-pavankumar/
+% License: MIT
+%
+% For errors, suggestions, or improvements, please contact:
+% Email: pavankumard.pg19.ma@nitp.ac.in
+%
+
+
+
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{MOHAMED SAHAD M}}
+\end{center}
+\vspace{-8mm}
+
+\begin{center}
+    \small{
+    +91 7510341129 | \href{mailto:mohamedsahadm786@gmail.com}{mohamedsahadm786@gmail.com} | \href{https://mohamedsahadm786.github.io/My_Portfoli/}{My Portfolio Website}
+   
+    }
+\end{center}
+\vspace{-8mm}
+
+\begin{center}
+    \small{
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/mohamed-sahad-m-96b038200/}{LinkedIn} | 
+    \socialicon{\faGithub} \href{https://github.com/mohamedsahadm786}{GitHub} 
+    }
+\end{center}
+\vspace{-8mm}
+
+\section{\textbf{Executive Summary}}
+\vspace{-0.1mm}
+\resumeHeadingSkillStart
+  ((( EXEC_SUMMARY )))
+\resumeHeadingSkillEnd
+
+ 
+
+
+
+
+
+
+\vspace{-3mm}
+\section{\textbf{Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {Data Analyst Intern }{Puducherry}
+    {Nevar Systems }{April 2025 - June 2025}
+\resumeItemListStart
+((( EXPERIENCE_NEVAR )))
+\resumeItemListEnd 
+
+\resumeSubheading
+    {Artificial Intelligence Intern }{Remote}
+    {Btech Walleh }{July 2024 - August 2024}
+\resumeItemListStart
+((( EXPERIENCE_BTECH )))
+\resumeItemListEnd 
+
+\resumeSubheading
+  {Corporate Development Specialist Intern }{Remote}
+  {Younity.in }{July 2023 - August 2023}
+\resumeItemListStart
+((( EXPERIENCE_YOUNITY )))
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+
+\vspace{-9mm}
+
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Pondicherry University}{Pondicherry, India}
+{M.Sc.Statistics}{September 2023 - June 2025}
+\resumeItemListStart
+\item CGPA: 8.34/10.00
+\resumeItemListEnd
+
+\resumeSubheading
+{Hindu College, University of Delhi}{Delhi, India}
+{B.Sc. (H) Statistics}{August 2020 - July 2023}
+\resumeItemListStart
+\item CGPA: 8.49/10.00
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+  
+\vspace{-7mm}
+
+
+
+\section{\textbf{Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+((( PROJECT_BLOCK_1 )))
+
+((( PROJECT_BLOCK_2 )))
+
+((( PROJECT_BLOCK_3 )))
+
+((( PROJECT_BLOCK_4 )))
+
+\resumeSubHeadingListEnd
+
+
+
+\vspace{-7mm}
+
+
+\section{\textbf{Achievements}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+
+
+\resumeProject
+  {Best Decision Maker}
+  {Younity.in}
+  {July 2024}
+  {{}[\href{https://drive.google.com/file/d/1NVjcs-H8f3lCr1slYJQihg3_dFBljMdo/view?usp=sharing}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+  \item Awarded the 'Best Decision Maker' certificate by Mr. Prafful Garg, CEO \& Founder of Younity.in, in recognition of exceptional strategic thinking and a strong commitment to learning and growth.
+  
+\resumeItemListEnd
+
+\resumeProject
+  {Rajya Puraskar }
+  {Bharat Scouts and Guides}
+  {January 2017}
+  {{}[\href{https://drive.google.com/file/d/1hPn7I2CySrt2Ps5UkkeoFNLUWTYhIfwQ/view}{\textcolor{darkblue}{\faIcon{globe}}}]}
+\resumeItemListStart
+  \item Honored with the Rajya Puraskar Award by the Governor of Kerala for outstanding achievements in Bharat Scouts and Guides, representing the highest level of recognition at the state level.
+  
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-7mm}
+
+
+
+\section{\textbf{Positions of Responsibility}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumeProject
+  {Member, Placement Cell (Finance and Alumni Section) }
+  {Pondicherry University }
+  {June 2024 - May 2025}
+  
+\resumeItemListStart
+  \item Contribute to the operations of the Placement Cell by managing financial activities, liaising with alumni, and supporting placement initiatives to enhance student career opportunities. 
+  
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-7mm}
+
+
+
+\section{\textbf{Certifications}}
+\vspace{-0.2mm}
+\resumeSubHeadingListStart
+
+\resumePOR{}{
+\textbf{SQL: Data Reporting and Analysis - } {{\href{https://www.linkedin.com/learning/certificates/5a970e01b43a5d42195f37753a0b4e47c9c98fa1fce21881c6869850e677c54f}
+{LinkedIn }}}}{February 2025}
+
+\resumePOR{}{
+\textbf{Deep Learning for Developers - } {{\href{https://drive.google.com/file/d/11FSAMxII01pRJrA3hE_4dR0Ii5-Vgtu6/view?usp=sharing}{Infosys }}}}{August 2024}
+
+\resumePOR{}{
+\textbf{Artificial Intelligence - } {{\href{https://drive.google.com/file/d/1mPFkpaR3sD8K1oMiPxqJTl8bSEmL2oX7/view?usp=sharing}{Teachnook }}}}{July 2024}
+
+\resumePOR{}{
+\textbf{Mastering Excel: From Basics to Advanced Concepts - } {{\href{https://drive.google.com/file/d/1akw3yn8WyhaPCWMgCe9N7NkoUyBkDKIV/view?usp=sharing}{Younity.in}}}}{June 2024}
+
+\resumePOR{}{
+\textbf{Data Analytics with Python - } {{\href{https://drive.google.com/file/d/1haBa01KHS8UC7RYiFfVX0dYc4DEDMqOi/view?usp=sharing}{IIT Roorkee}}}}{May 2024}
+
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+
+
+\section{\textbf{Skills}}
+\vspace{-0.1mm}
+\resumeHeadingSkillStart
+((( SKILLS )))
+\resumeHeadingSkillEnd
+
+
+
+ \vspace{-1mm}
+
+
+\section{\textbf{Virtual Experience and Certifications}}
+\vspace{-0.4mm}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {Data Analytics and Visualization }{}
+      {Accenture North America }{May 2024 }
+      \resumeItemListStart
+        \item Analyzed 7 datasets to extract insights on content trends and inform strategic decision-making.
+        \item Delivered findings via a PowerPoint deck and video presentation tailored for client and internal stakeholders. 
+        
+        
+      \resumeItemListEnd 
+  \resumeSubheading
+    {Tata Data Visualisation }{}
+    {TCS }{January 2025}
+    \resumeItemListStart
+      \item Created data visualizations to support development strategy simulations and senior leadership decisions.
+      \item Drafted client-facing questions and delivered visuals for executive-level decision-making.
+      
+      
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+ 
+
+
+\vspace{-5mm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
